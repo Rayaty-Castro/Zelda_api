@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compêndio de Hyrule - Zelda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="triforce">▲<br>▲ ▲</div>
+        <h1>Compêndio de Hyrule</h1>
+        <p>Gerenciamento de Personagens e Relíquias de The Legend of Zelda</p>
+        <a href="/swagger-ui/index.html" target="_blank" class="btn-swagger">Abrir Documentação Swagger</a>
+    </header>
+
+    <main class="container">
+        <!-- SEÇÃO PERSONAGENS -->
+        <section class="card">
+            <h2>Personagens</h2>
+            <form id="form-personagem">
+                <input type="hidden" id="personagem-id">
+                <input type="text" id="personagem-nome" placeholder="Nome (ex: Link, Zelda)" required>
+                <input type="text" id="personagem-raca" placeholder="Raça (ex: Hylian, Zora, Gerudo)" required>
+                <input type="text" id="personagem-papel" placeholder="Papel (ex: Herói, Princesa, Vilão)" required>
+                <input type="number" id="personagem-coracoes" placeholder="Corações (ex: 20)" required>
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Salvar Personagem</button>
+                    <button type="button" class="btn-cancelar" onclick="limparFormPersonagem()">Limpar</button>
+                </div>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Raça</th>
+                        <th>Papel</th>
+                        <th>Corações</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-personagens"></tbody>
+            </table>
+        </section>
+
+        <!-- SEÇÃO ITENS -->
+        <section class="card">
+            <h2>Itens & Equipamentos</h2>
+            <form id="form-item">
+                <input type="hidden" id="item-id">
+                <input type="text" id="item-nome" placeholder="Nome (ex: Master Sword)" required>
+                <input type="text" id="item-tipo" placeholder="Tipo (ex: Espada, Escudo, Relíquia)" required>
+                <input type="number" id="item-poder" placeholder="Poder (ex: 60)" required>
+                <input type="text" id="item-raridade" placeholder="Raridade (ex: Lendário, Raro)" required>
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Salvar Item</button>
+                    <button type="button" class="btn-cancelar" onclick="limparFormItem()">Limpar</button>
+                </div>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Poder</th>
+                        <th>Raridade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-itens"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
